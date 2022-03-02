@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+<title>{% block title %}Add Car{% endblock %}</title>
+
+{% block body %}
+
+
+<form class="edit-form" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+</form>
+
+
+{% endblock %}

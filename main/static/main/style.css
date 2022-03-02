@@ -1,0 +1,26 @@
+body{
+    background: black url("images/memphis-mini-dark.png");
+    color: white;
+}
+
+.navbar-brand{
+    font-family: 'Righteous', serif;
+}
+
+.container{
+    position: relative;
+    border: 10px;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.test {
+    font-size: large;
+}

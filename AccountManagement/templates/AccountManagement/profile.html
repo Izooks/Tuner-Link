@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+<head>
+<title>{% block title %}Profile{% endblock %}</title>
+</head>
+
+
+{% block body %}
+<center>
+<p><h1>{{request.user.first_name.capitalize}}'s Profile Page</h1></p>
+
+<p>
+
+    
+
+    {% for x in data %}
+    
+
+
+    <div class="container justify-content-md-center">
+    <ul class="list-group">
+        <h2>
+            <li class="list-group-item  list-group-item-dark">{{x.city}}</li>
+            <li class="list-group-item  list-group-item-dark"><img src="{{x.image.url}}" height=540 width=960 /></li>
+            <li class="list-group-item  list-group-item-dark">{{x.car}}</li>
+            <li class="list-group-item  list-group-item-dark">{{x.description}}</li>
+            <li class="list-group-item list-group-item-action list-group-item-dark">{{x.modifications}}</li>
+        </h2>   
+    </ul>
+    </div>
+        <a class="btn btn-outline-light" href="{% url 'AccountManagement:update' request.user.id %}">Modify Car</a>
+        <a class="btn btn-outline-light" href="{% url 'AccountManagement:delete' request.user.id%}">Delete Car</a>
+        <p></p>
+    {% endfor %}
+</p>
+
+<a class="btn btn-outline-light" href="{% url 'AccountManagement:edit' %}">Add Car</a>
+</center>
+{% endblock %}

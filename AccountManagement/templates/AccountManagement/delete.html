@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+<head>
+<title>{% block title %}Delete{% endblock %}</title>
+</head>
+
+
+{% block body %}
+
+    <p>Are you sure you want to delete "{{}}"</p>
+
+    <form method="POST">
+        <a href="{% url 'AccountManagement:profile' %}">Cancel</a>
+        <input type="submit" name="confirm">
+    </form>
+
+{% endblock %}
