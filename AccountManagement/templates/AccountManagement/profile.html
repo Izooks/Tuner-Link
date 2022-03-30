@@ -20,7 +20,6 @@
     <div class="container justify-content-md-center">
     <ul class="list-group">
         <h2>
-            <li class="list-group-item  list-group-item-dark">{{x.city}}</li>
             <li class="list-group-item  list-group-item-dark"><img src="{{x.image.url}}" height=540 width=960 /></li>
             <li class="list-group-item  list-group-item-dark">{{x.car}}</li>
             <li class="list-group-item  list-group-item-dark">{{x.description}}</li>
@@ -28,8 +27,8 @@
         </h2>   
     </ul>
     </div>
-        <a class="btn btn-outline-light" href="{% url 'AccountManagement:update' request.user.id %}">Modify Car</a>
-        <a class="btn btn-outline-light" href="{% url 'AccountManagement:delete' request.user.id%}">Delete Car</a>
+        <a class="btn btn-outline-light" href="{% url 'AccountManagement:update' x.id %}">Modify Car</a>
+        <a class="btn btn-outline-light" href="{% url 'AccountManagement:delete' x.id %}">Delete Car</a>
         <p></p>
     {% endfor %}
 </p>

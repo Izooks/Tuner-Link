@@ -9,8 +9,8 @@ app_name='main'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('base/', views.base, name='base')
-    
+    path('base/', views.base, name='base'),
+    path('build_view/<int:pk>/', views.build_view, name='view')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -14,7 +14,6 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     driver = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    name = models.CharField(max_length=200, null=False, default="Name")
     email = models.CharField(max_length=200, null=False, default="Email")
     dob = models.DateField(auto_now_add=False, null=True)
     city = models.CharField(max_length=200, null=False, default="City")

@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+<head>
+<title>{% block title %}Build{% endblock %}</title>
+</head>
+
+
+{% block body %}
+<center>
+<p><h1>{{test.driver}}'s Build</h1></p>
+
+<p>
+
+    
+
+    {% if test %}
+    
+
+
+    <div class="container justify-content-md-center">
+    <ul class="list-group">
+        <h2>
+            <li class="list-group-item  list-group-item-dark"><img src="{{test.image.url}}" height=540 width=960 /></li>
+            <li class="list-group-item  list-group-item-dark">{{test.car}}</li>
+            <li class="list-group-item  list-group-item-dark">{{test.description}}</li>
+            <li class="list-group-item list-group-item-action list-group-item-dark">{{test.modifications}}</li>
+        </h2>   
+    </ul>
+    </div>
+        <p></p>
+    {% endif %}
+</p>
+
+</center>
+{% endblock %}

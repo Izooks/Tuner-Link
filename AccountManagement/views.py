@@ -77,8 +77,7 @@ def edit_view(request):
     return render(request, 'AccountManagement/edit.html', {'form': form})
 
 def update_car(request, pk):
-    car = User.objects.get(id=pk)
-    update = Profile.objects.get(driver=car)
+    update = Profile.objects.get(id=pk)
     form = forms.Profileform(instance=update)
 
     if request.method == 'POST':
@@ -90,7 +89,12 @@ def update_car(request, pk):
     return render(request, 'AccountManagement/update.html', {'form': form})
 
 def delete_car(request, pk):
-    car = User.objects.get(id=pk)
-    update = Profile.objects.get(driver=car)
-    form = forms.Profileform(instance=update)
-    return render(request, 'AccountManagement/delete.html', {'form': form})
+    update = Profile.objects.get(id=pk)
+    if request.method == "POST":
+        update.delete()
+        return redirect('/')
+    
+    context = {'item': update}
+    return render(request, 'AccountManagement/delete.html', context)
+
+

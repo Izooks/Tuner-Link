@@ -7,10 +7,13 @@
 
 {% block body %}
 
-    <p>Are you sure you want to delete "{{}}"</p>
+    <p>Are you sure you want to delete "{{item.car}}"?</p>
 
-    <form method="POST">
-        <a href="{% url 'AccountManagement:profile' %}">Cancel</a>
+    <form action="{% url 'AccountManagement:delete' item.id %}" method="POST">
+        
+        {% csrf_token %}
+
+        <a href="{% url 'AccountManagement:profile'  %}">Cancel</a>
         <input type="submit" name="confirm">
     </form>
 

@@ -17,4 +17,4 @@ class CreateUserForm(UserCreationForm):
 class Profileform(forms.ModelForm):
     class Meta:
         model = models.Profile
-        fields = ['city', 'image', 'car', 'description', 'modifications']
+        fields = ['image', 'car', 'description', 'modifications']

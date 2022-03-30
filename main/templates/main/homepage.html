@@ -5,12 +5,32 @@
 {% block body %}
 
 <center>
-<h1> This is the Homepage! </h1>
-
-<p>
-    Welcome to TunerLink
-</p>
+<h1> TunerLink's Featured Builds! </h1>
 </center>
+<p>
+    
+    
+
+    <div class="container">
+        <div class="row">
+            {% for car in test %}
+            <div class="col-3">
+                <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                    <img src="{{car.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{car.driver}}</h5>
+                        <p class="card-text">{{car.car}}</p>
+                        <a href="{% url 'main:view' car.id %}" class="btn btn-secondary">View Build</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+</p>
+
 
 
 {% endblock %}
