@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+
+<title>{% block title %}Search{% endblock %}</title>
+
+{% block body %}
+
+<p>
+    <center>
+    {% if searched %}
+    
+        <h1>You Searched For {{searched}} </h1>
+        <br/>
+        {% for build in builds %}
+        <div class="col-3">
+            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                <img src="{{build.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{build.driver}}</h5>
+                    <p class="card-text">{{build.car}}</p>
+                    <a href="{% url 'main:view' car.id %}" class="btn btn-secondary">View Build</a>
+                </div>
+            </div>
+        </div>
+        
+        {% else %}
+
+        <h1>Hey! you forgot to search for a car</h1>
+    
+    {% endif %}
+    </center>
+
+    <div class="container">
+        <div class="row">
+            {% for car in test %}
+            <div class="col-3">
+                <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                    <img src="{{car.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{car.driver}}</h5>
+                        <p class="card-text">{{car.car}}</p>
+                        <a href="{% url 'main:view' car.id %}" class="btn btn-secondary">View Build</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+</p>
+
+
+
+{% endblock %}
