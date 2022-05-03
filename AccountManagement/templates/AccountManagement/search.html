@@ -17,12 +17,14 @@
                 <div class="card-body">
                     <h5 class="card-title">{{build.driver}}</h5>
                     <p class="card-text">{{build.car}}</p>
-                    <a href="{% url 'main:view' car.id %}" class="btn btn-secondary">View Build</a>
+                    
+                    <a href="{% url 'main:view' build.id %}" class="btn btn-secondary">View Build</a>
                 </div>
             </div>
         </div>
-        
-        {% else %}
+        {% endfor %}
+
+    {% else %}
 
         <h1>Hey! you forgot to search for a car</h1>
     

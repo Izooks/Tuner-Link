@@ -101,7 +101,7 @@ def search_view(request):
 
     if request.method == "POST":
         searched = request.POST['searched']
-        builds = Profile.objects.filter(driver__contains=searched)
+        builds = Profile.objects.filter(car__contains=searched)
 
         return render(request, 'AccountManagement/search.html', {'searched':searched, 'builds':builds})
     else:
